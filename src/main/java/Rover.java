@@ -28,11 +28,11 @@ public class Rover {
 	public void move() throws Exception {
 		if(NORTH.equals(direction)) {
 			y++;
-		}else if(SOUTH.equals(direction)&& y>0) {
+		}else if(SOUTH.equals(direction) && y > 0) {
 			y--;
 		}else if(EAST.equals(direction)) {
 			x++;
-		}else if(WEST.equals(direction)&& x>0) {
+		}else if(WEST.equals(direction) && x > 0) {
 			x--;
 		}
 		
@@ -71,7 +71,7 @@ public class Rover {
 	
 	public String execute(String mission) throws Exception {
 		String[] info = mission.split(",");
-		if(info.length<5){
+		if(info.length < 5){
 			return null;
 		}	
 		Area area = new Area(Integer.parseInt(info[0]), Integer.parseInt(info[1]));
