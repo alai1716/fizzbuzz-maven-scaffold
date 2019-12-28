@@ -1,28 +1,28 @@
 public class Area {
-	private int X = 0;
-	private int Y = 0;
-	public Area(int X, int Y) {
-		this.X = X;
-		this.Y = Y;
-	}
-	public int getX() {
-		return X;
-	}
-	public void setX(int x) {
-		X = x;
-	}
-	public int getY() {
-		return Y;
-	}
-	public void setY(int y) {
-		Y = y;
-	}
-	
-	public boolean containsPointWithX(int x) {
-		return (0 <= x) && (x <= X);
-	}
-	
-	public boolean containsPointWithY(int y) {
-		return (0 <= y) && (y <= Y);
-	}
+   private int areaX = 0;
+   private int areaY = 0;
+   public Area(int areaX, int areaY) {
+      this.areaX = areaX;
+      this.areaY = areaY;
+   }
+   public int getAreaX() {
+      return areaX;
+   }
+   public void setAreaX(int areaX) {
+      this.areaX = areaX;
+   }
+   public int getAreaY() {
+      return areaY;
+   }
+   public void setAreaY(int areaY) {
+      this.areaY = areaY;
+   }
+   
+   public boolean containsPointWithX(int x) {
+      return (0 <= x) && (x <= areaX);
+   }
+   
+   public boolean containsPointWithY(int y) {
+      return (0 <= y) && (y <= areaY);
+   }
 }
