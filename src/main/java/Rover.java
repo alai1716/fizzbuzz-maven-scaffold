@@ -13,7 +13,7 @@ public class Rover {
 			throw new Exception("x=" + x + " is out of area");
 		}
 		if(!area.containsPointWithY(y)){
-			throw new Exception("Y=" + + " is out of area");
+			throw new Exception("Y=" + y + " is out of area");
 		}
 		this.area = area;
 		this.x = x;
