@@ -3,11 +3,11 @@ public class Rover {
 	public static final String NORTH = "N"; //北
 	public static final String SOUTH = "S"; //南
 	public static final String WEST  = "W"; //西
-	
 	private Area area;
 	private int x = 0;
 	private int y = 0;
 	private String direction;
+	
 	public void land(Area area, int x, int y, String direction) throws Exception {
 		if(!area.containsPointWithX(x)) {
 			throw new Exception("x="+x+" is out of area");
@@ -19,13 +19,10 @@ public class Rover {
 		this.x = x;
 		this.y = y;
 		this.direction = direction;
-		
 	}
 	
 	public String getPosition() {
-		String position = "" + x +  y + direction;
-		
-		return position;
+		return position "" + x +  y + direction;
 	}
 
 	public void move() throws Exception {
@@ -74,6 +71,9 @@ public class Rover {
 	
 	public String execute(String mission) throws Exception {
 		String[] info = mission.split(",");
+		if(info.length<5){
+			return null;
+		}	
 		Area area = new Area(Integer.parseInt(info[0]), Integer.parseInt(info[1]));
 		Rover rover = new Rover();
 		rover.land(area, Integer.parseInt(info[2]), Integer.parseInt(info[3]), info[4]);
