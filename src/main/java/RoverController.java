@@ -11,14 +11,14 @@ public class RoverController {
 			return null;
 		}	
 		Area area = new Area(Integer.parseInt(info[0]), Integer.parseInt(info[1]));
-		Rover rover = new Rover();
-		rover.land(area, Integer.parseInt(info[2]), Integer.parseInt(info[3]), info[4]);
+		Rover rov = new Rover();
+		rov.land(area, Integer.parseInt(info[2]), Integer.parseInt(info[3]), info[4]);
 		
 		for (int i = 4; i < info.length; i++) {
-			executeOneCommend(info, rover, i);
+			executeOneCommend(info, rov, i);
 		}
 		
-		return rover.getPosition();
+		return rov.getPosition();
 	}
 
 	private void executeOneCommend(String[] info, Rover rover, int i) throws Exception {
@@ -30,5 +30,4 @@ public class RoverController {
 			rover.turnRight();
 		}
 	}
-
 }
