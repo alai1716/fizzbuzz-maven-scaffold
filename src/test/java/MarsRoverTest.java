@@ -1,6 +1,7 @@
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class MarsRoverTest {
@@ -29,8 +30,9 @@ public class MarsRoverTest {
 	@Test
 	public void name() throws Exception {
 		Rover rover = new Rover();
+		RoverController roverController = new RoverController(rover);
 		String mission = "10,10,5,5,E,M,L,M,R";
-		String position = rover.execute(mission);
+		String position = roverController.execute(mission);
 		assertThat(position).isEqualTo("66E");
 	}
 	
@@ -38,17 +40,21 @@ public class MarsRoverTest {
 	public void should_warning_when_land_out_of_area() throws Exception {
 		expectedException.expect(Exception.class);
 		expectedException.expectMessage("x=20 is out of area");
+		
 		Rover rover = new Rover();
+		RoverController roverController = new RoverController(rover);
 		String mission = "10,10,20,20,E,M,L,M,R";
-		rover.execute(mission);
+		roverController.execute(mission);
 	}
 	
 	@Test
 	public void should_warning_when_move_out_of_area() throws Exception {
 		expectedException.expect(Exception.class);
 		expectedException.expectMessage("不能移动到区域外");
+		
 		Rover rover = new Rover();
+		RoverController roverController = new RoverController(rover);
 		String mission = "10,10,9,9,E,M,M,M,M";
-		rover.execute(mission);
+		roverController.execute(mission);
 	}
 }
