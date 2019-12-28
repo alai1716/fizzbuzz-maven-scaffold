@@ -22,7 +22,7 @@ public class Rover {
 	}
 	
 	public String getPosition() {
-		return position "" + x +  y + direction;
+		return "" + x +  y + direction;
 	}
 
 	public void move() throws Exception {
